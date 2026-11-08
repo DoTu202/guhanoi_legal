@@ -1,18 +1,154 @@
 <!doctype html>
-<html lang="vi">
+<html lang="vi" data-lang="vi">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Gu Hà Nội</title>
-<meta name="description" content="Gu Hà Nội – ứng dụng khám phá quán cà phê ở Hà Nội.">
-<link rel="stylesheet" href="style.css">
+<title>Gu Hà Nội – ứng dụng khám phá quán cà phê</title>
+<meta name="description" content="Gu Hà Nội: ứng dụng di động (React Native + NestJS) gợi ý quán cà phê ở Hà Nội theo gu cá nhân, có trợ lý AI và công cụ cho chủ quán. Xem video demo và công nghệ sử dụng.">
+<meta property="og:title" content="Gu Hà Nội – ứng dụng khám phá quán cà phê">
+<meta property="og:description" content="Ứng dụng di động full-stack: gợi ý quán theo gu, trợ lý AI, chat với chủ quán, công cụ cho chủ quán và admin.">
+<meta property="og:image" content="https://dotu202.github.io/guhanoi_legal/assets/home.jpg">
+<link rel="icon" href="logo.png">
+<link rel="stylesheet" href="site.css">
+<script>
+try{var s=localStorage.getItem("lang");document.documentElement.dataset.lang=s||((navigator.language||"vi").slice(0,2)==="vi"?"vi":"en")}catch(e){}
+</script>
 </head>
-<body><main>
-<img class="logo" src="logo.png" alt="Logo Gu Hà Nội">
-<h1>Gu Hà Nội</h1>
-<p class="muted">Ứng dụng khám phá quán cà phê ở Hà Nội.</p>
-<p>Gu Hà Nội giúp bạn tìm quán cà phê gần mình theo phong cách, đồ uống và không gian làm việc; đọc và viết đánh giá; lưu quán yêu thích; nhắn tin với chủ quán. Chủ quán có thể nhận quán, cập nhật giờ mở cửa, thực đơn và trả lời đánh giá.</p>
-<p>Ứng dụng hiện đang trong giai đoạn khảo sát thử nghiệm trên Android.</p>
-<p><a href="privacy.html">Chính sách quyền riêng tư</a></p>
-<footer>Liên hệ: <a href="mailto:mhtu1213@gmail.com">mhtu1213@gmail.com</a></footer>
-</main></body>
+<body>
+<div class="wrap">
+
+<nav>
+  <a class="brand" href="#top"><img src="logo.png" alt="Logo Gu Hà Nội"><span>Gu Hà Nội</span></a>
+  <div class="links">
+    <a class="hide-s" href="#features"><span data-l="vi">Tính năng</span><span data-l="en">Features</span></a>
+    <a class="hide-s" href="#tech"><span data-l="vi">Công nghệ</span><span data-l="en">Tech</span></a>
+    <a href="privacy.html"><span data-l="vi">Quyền riêng tư</span><span data-l="en">Privacy</span></a>
+    <button class="lang" id="lang" type="button" aria-label="Language">VI / EN</button>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div>
+    <p class="eyebrow"><span data-l="vi">Dự án cá nhân · Full-stack mobile</span><span data-l="en">Personal project · Full-stack mobile</span></p>
+    <h1><span data-l="vi">Tìm quán cà phê hợp <em style="color:var(--brand);font-style:normal">gu</em> của bạn ở Hà Nội</span><span data-l="en">Find the Hanoi coffee shop that fits your <em style="color:var(--brand);font-style:normal">taste</em></span></h1>
+    <p class="lead">
+      <span data-l="vi">Ứng dụng Android/iOS tự xây từ đầu: app React Native, API NestJS, cơ sở dữ liệu PostgreSQL với PostGIS và vector. Người dùng chọn khu vực, phong cách, mức giá; app gợi ý quán phù hợp, có trợ lý AI và chat trực tiếp với chủ quán.</span>
+      <span data-l="en">A mobile app built end to end: React Native client, NestJS API, PostgreSQL with PostGIS and vector search. Users pick areas, styles and price range; the app recommends shops, with an AI assistant and direct chat with shop owners.</span>
+    </p>
+    <div class="cta">
+      <a class="btn primary" href="#demo"><span data-l="vi">Xem video demo</span><span data-l="en">Watch the demo</span></a>
+      <a class="btn" href="#tech"><span data-l="vi">Kiến trúc &amp; công nghệ</span><span data-l="en">Architecture &amp; stack</span></a>
+    </div>
+    <div class="badges">
+      <span class="badge">React Native · Expo</span><span class="badge">NestJS</span><span class="badge">PostgreSQL · PostGIS · pgvector</span><span class="badge">TypeScript</span>
+    </div>
+  </div>
+  <div class="phone" id="demo">
+    <video controls playsinline muted loop preload="metadata" poster="assets/home.jpg" aria-label="Video demo Gu Hà Nội trên Android emulator">
+      <source src="assets/gu-demo.mp4" type="video/mp4">
+    </video>
+  </div>
+</header>
+
+<section id="features">
+  <h2><span data-l="vi">Ứng dụng làm được gì</span><span data-l="en">What the app does</span></h2>
+  <p class="sub"><span data-l="vi">Ba nhóm người dùng, mỗi nhóm có màn hình riêng trong cùng một app.</span><span data-l="en">Three kinds of users, each with their own screens in the same app.</span></p>
+  <div class="grid">
+    <div class="card"><h3><span data-l="vi">Người dùng</span><span data-l="en">Visitors</span></h3>
+      <ul>
+        <li data-l="vi">Hồ sơ “Gu của bạn”: khu vực, phong cách, đồ uống, mức giá; Trang chủ ưu tiên quán hợp gu</li>
+        <li data-l="en">“Your taste” profile: areas, styles, drinks, price; the home feed ranks matching shops first</li>
+        <li data-l="vi">Khoảng cách tới quán, bản đồ, lưu quán yêu thích</li>
+        <li data-l="en">Distance to each shop, map view, saved shops</li>
+        <li data-l="vi">Chi tiết quán: giờ mở cửa, mức giá, Wi-Fi, chỗ ngồi, tiện nghi</li>
+        <li data-l="en">Shop details: hours, price, Wi-Fi, seating, amenities</li>
+        <li data-l="vi">Viết và quản lý đánh giá trải nghiệm</li>
+        <li data-l="en">Write and manage experience reviews</li>
+      </ul></div>
+    <div class="card"><h3><span data-l="vi">Trợ lý AI &amp; chat</span><span data-l="en">AI assistant &amp; chat</span></h3>
+      <ul>
+        <li data-l="vi">Hỏi bằng tiếng Việt tự nhiên (“quán yên tĩnh làm việc có đồ ô tô”); AI hiểu ý định và trả về danh sách quán kèm lý do</li>
+        <li data-l="en">Ask in natural Vietnamese (“quiet shop to work, with parking”); the AI parses intent and returns shops with reasons</li>
+        <li data-l="vi">Nhắn tin trực tiếp cho chủ quán</li>
+        <li data-l="en">Message shop owners directly</li>
+        <li data-l="vi">Thông báo đẩy khi có tin nhắn hoặc kết quả duyệt quán</li>
+        <li data-l="en">Push notifications for messages and moderation results</li>
+      </ul></div>
+    <div class="card"><h3><span data-l="vi">Chủ quán &amp; admin</span><span data-l="en">Owners &amp; admins</span></h3>
+      <ul>
+        <li data-l="vi">Chủ quán: đăng ký quán, cập nhật giờ mở cửa và thực đơn, trả lời đánh giá, hộp thư khách, thống kê</li>
+        <li data-l="en">Owners: submit a shop, edit hours and menu, reply to reviews, customer inbox, insights</li>
+        <li data-l="vi">Admin: duyệt yêu cầu, quản lý danh mục quán, xử lý báo cáo đánh giá, có nhật ký kiểm toán</li>
+        <li data-l="en">Admins: moderate requests, manage the catalog, handle review reports, with an audit log</li>
+        <li data-l="vi">Đăng ký bằng email có xác minh mã, quên mật khẩu, đăng nhập Google</li>
+        <li data-l="en">Email sign-up with code verification, password reset, Google sign-in</li>
+      </ul></div>
+  </div>
+</section>
+
+<section id="screens">
+  <h2><span data-l="vi">Màn hình</span><span data-l="en">Screens</span></h2>
+  <p class="sub"><span data-l="vi">Ảnh chụp từ Android emulator, giao diện “Espresso &amp; Copper” với logo bình pour-over.</span><span data-l="en">Captured from the Android emulator, in the “Espresso &amp; Copper” theme with a pour-over logo.</span></p>
+  <div class="shots">
+    <figure><div class="phone small"><img src="assets/home.jpg" alt="Trang chủ gợi ý quán" loading="lazy"></div><figcaption><span data-l="vi">Trang chủ</span><span data-l="en">Home</span></figcaption></figure>
+    <figure><div class="phone small"><img src="assets/detail.jpg" alt="Chi tiết quán" loading="lazy"></div><figcaption><span data-l="vi">Chi tiết quán</span><span data-l="en">Shop detail</span></figcaption></figure>
+    <figure><div class="phone small"><img src="assets/chat.jpg" alt="Trợ lý AI" loading="lazy"></div><figcaption><span data-l="vi">Trợ lý AI</span><span data-l="en">AI assistant</span></figcaption></figure>
+    <figure><div class="phone small"><img src="assets/profile.jpg" alt="Hồ sơ Gu của bạn" loading="lazy"></div><figcaption><span data-l="vi">Gu của bạn</span><span data-l="en">Taste profile</span></figcaption></figure>
+  </div>
+  <p class="note" style="margin-top:24px"><strong><span data-l="vi">Lưu ý:</span><span data-l="en">Note:</span></strong>
+    <span data-l="vi">Dữ liệu trong demo là dữ liệu mẫu (95 quán ở Hà Nội). Ảnh quán đang là ảnh giữ chỗ, đang chờ nguồn ảnh hợp lệ.</span>
+    <span data-l="en">Demo data is sample data (95 Hanoi shops). Shop photos are placeholders while a licensed photo source is sorted out.</span></p>
+</section>
+
+<section id="tech">
+  <h2><span data-l="vi">Công nghệ &amp; kỹ thuật</span><span data-l="en">Stack &amp; engineering</span></h2>
+  <p class="sub"><span data-l="vi">Mã nguồn để private; phần dưới là tóm tắt kiến trúc.</span><span data-l="en">The source is private; here is a summary of the architecture.</span></p>
+  <div class="grid two">
+    <div class="card"><h3>Mobile</h3><ul>
+      <li>React Native 0.88, Expo 58, TypeScript</li>
+      <li>React Navigation, TanStack Query</li>
+      <li>react-native-maps, expo-notifications, Google Sign-In</li>
+      <li>Jest + Testing Library</li></ul></div>
+    <div class="card"><h3>Backend</h3><ul>
+      <li>NestJS 12 (ESM), Prisma 7, REST + Swagger</li>
+      <li>JWT (access/refresh), rate limiting, helmet, class-validator</li>
+      <li>Redis cache, Cloudinary uploads, Gmail API, Expo push</li>
+      <li>Vitest: unit + e2e</li></ul></div>
+    <div class="card"><h3><span data-l="vi">Dữ liệu &amp; AI</span><span data-l="en">Data &amp; AI</span></h3><ul>
+      <li data-l="vi">PostgreSQL + PostGIS (khoảng cách), pgvector (embedding 768 chiều cho quán và hồ sơ gu)</li>
+      <li data-l="en">PostgreSQL + PostGIS (distance), pgvector (768-dim embeddings for shops and taste profiles)</li>
+      <li data-l="vi">Google Gemini: phân tích ý định câu hỏi và tạo embedding</li>
+      <li data-l="en">Google Gemini: query intent parsing and embeddings</li></ul></div>
+    <div class="card"><h3>CI / DevOps</h3><ul>
+      <li data-l="vi">GitHub Actions: lint, build, unit, e2e, typecheck, jest; tự chạy migration khi merge vào main</li>
+      <li data-l="en">GitHub Actions: lint, build, unit, e2e, typecheck, jest; auto-runs migrations on merge to main</li>
+      <li data-l="vi">Triển khai Render (Singapore) + Neon Postgres</li>
+      <li data-l="en">Deployed on Render (Singapore) + Neon Postgres</li>
+      <li data-l="vi">Chỉ dùng dịch vụ miễn phí, không cần thẻ</li>
+      <li data-l="en">Free-tier services only, no card attached</li></ul></div>
+  </div>
+</section>
+
+<section id="status">
+  <h2><span data-l="vi">Trạng thái &amp; liên hệ</span><span data-l="en">Status &amp; contact</span></h2>
+  <p class="note">
+    <span data-l="vi">Ứng dụng đang trong giai đoạn khảo sát thử nghiệm trên Android. Mã nguồn đang để private; bạn có thể liên hệ để xem cùng nhau trong buổi trao đổi hoặc phỏng vấn.</span>
+    <span data-l="en">The app is in a pilot survey phase on Android. The source is private; get in touch and I am happy to walk through it in a call or interview.</span>
+  </p>
+</section>
+
+</div>
+<div class="wrap">
+<footer>
+  <span>Đỗ Minh Tú · <a href="mailto:mhtu1213@gmail.com">mhtu1213@gmail.com</a> · <a href="https://github.com/DoTu202">GitHub</a></span>
+  <a href="privacy.html"><span data-l="vi">Chính sách quyền riêng tư</span><span data-l="en">Privacy policy</span></a>
+</footer>
+</div>
+<script>
+document.getElementById("lang").addEventListener("click",function(){
+  var d=document.documentElement,n=d.dataset.lang==="vi"?"en":"vi";
+  d.dataset.lang=n;d.lang=n;try{localStorage.setItem("lang",n)}catch(e){}
+});
+document.documentElement.lang=document.documentElement.dataset.lang;
+</script>
+</body>
 </html>
